@@ -2,9 +2,13 @@ package quiz.application;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.File;
+import javax.sound.sampled.*;
 
 public class Profile extends JFrame {
 
@@ -13,6 +17,7 @@ public class Profile extends JFrame {
     JButton btnBack;
     DefaultListModel<String> matchListModel;
     JList<String> matchList;
+    private Clip bgMusic;
 
     Profile() {
         setTitle("AI-powered Quiz Game - Profile Page");
@@ -99,6 +104,35 @@ public class Profile extends JFrame {
         setLocation(220, 150);
         setResizable(false);
         setVisible(true);
+
+        addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                stopBackgroundMusic();
+            }
+        });
+
+        startBackgroundMusic("C:\\Users\\Lenovo\\OneDrive\\Documents\\NetBeansProjects\\Quiz Application\\src\\icons\\rules_bg.wav");
+    }
+
+    private void startBackgroundMusic(String filePath) {
+        try {
+            File soundFile = new File(filePath);
+            AudioInputStream audio = AudioSystem.getAudioInputStream(soundFile);
+            bgMusic = AudioSystem.getClip();
+            bgMusic.open(audio);
+            bgMusic.loop(Clip.LOOP_CONTINUOUSLY);
+            bgMusic.start();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void stopBackgroundMusic() {
+        if (bgMusic != null && bgMusic.isRunning()) {
+            bgMusic.stop();
+            bgMusic.close();
+        }
     }
 
     private void loadCredentials() {
