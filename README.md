@@ -41,3 +41,71 @@ This repository contains a comprehensive quiz application developed in Java usin
 - *Audio:* Java Sound API
 
 ## Directory Structure
+
+src/
+└── quiz/
+└── application/
+├── Main_Menu.java # Main landing and navigation window
+├── Login.java # Handles authentication logic and forms
+├── Profile.java # Displays user profile, credentials & match history
+├── Quiz.java # Core quiz logic and UI
+├── Leaderboard.java # Leaderboard table and display logic
+├── Mode.java # Mode selection interface
+├── Score.java # Score display and calculation
+├── Rules.java # Displays quiz instructions and rules
+├── Session.java # Tracks session state and user info
+└── ... # Additional resource and utility files
+assets/
+└── icons/
+└── ... # Image and audio resources
+game_history.txt # Quiz results and scores log
+credentials.txt # User login info store (if applicable)
+
+## Instructions for Use
+
+1. *Clone the Repository:*
+- git clone https://github.com/Yogesh0209/AI-Powered-Quiz-Game.git
+
+2. *Open in NetBeans or other Java IDE:*
+- Open the project as a Java project.
+- Check that your JDK version is 8 or higher.
+
+3. *Run the Application:*
+- Execute Main_Menu.java to start.
+- Register or log in to access full features, or use guest mode for a limited experience.
+
+4. *Functionality Overview:*
+- Use the Mode page to select quiz type.
+- Complete quizzes to see instant results and leaderboard updates.
+- Login enables profile storage and tracking.
+
+## Notes for Reviewers
+
+- The project demonstrates:
+- Full object-oriented design and modular architecture.
+- Persistent storage of user data, with sensitive data management best practices.
+- Extensive use of Java Swing for GUI, including custom themes and controls.
+- Handling of media (audio/music integration) and user interaction lifecycles.
+- The codebase is suitable as a portfolio demonstration of both Java language proficiency and software engineering best practices.
+
+## Screenshots
+
+(Add screenshots of Main Menu, Quiz Mode, Profile Page, and Leaderboard here for quick visual reference)
+
+## Future Improvements
+
+- Database integration for scalable user data.
+- REST API for quiz question fetching or multiplayer support.
+- Web/app version using modern frameworks.
+- More extensive admin dashboard for managing users and questions.
+
+## License
+
+This project is licensed for academic and demonstration use. For any deployment or production use, please contact the maintainer.
+
+---
+
+*Developed by:* Yogesh Singh  
+*Contact:* [ybhadauriya40@gmail.com]
+
+---
