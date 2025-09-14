@@ -37,7 +37,7 @@ public class Mode extends JFrame implements ActionListener {
         add(challenger);
 
         // Rapid Fire button
-        rapidFire = new JButton("<html><center>3. Rapid Fire<br><small>15 seconds total to answer all questions</small></center></html>");
+        rapidFire = new JButton("<html><center>3. Rapid Fire<br><small>15 seconds given per question</small></center></html>");
         rapidFire.setBounds(250, 330, 400, 80);
         styleButton(rapidFire);
         rapidFire.addActionListener(this);
