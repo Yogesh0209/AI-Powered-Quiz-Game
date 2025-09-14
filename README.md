@@ -40,26 +40,22 @@ This repository contains a comprehensive quiz application developed in Java usin
 - *Data Persistence:* Local File I/O
 - *Audio:* Java Sound API
 
-## Directory Structure
+*Description of Main Files:*
 
-src/
-└── quiz/
-└── application/
-├── Main_Menu.java # Main landing and navigation window
-├── Login.java # Handles authentication logic and forms
-├── Profile.java # Displays user profile, credentials & match history
-├── Quiz.java # Core quiz logic and UI
-├── Leaderboard.java # Leaderboard table and display logic
-├── Mode.java # Mode selection interface
-├── Score.java # Score display and calculation
-├── Rules.java # Displays quiz instructions and rules
-├── Session.java # Tracks session state and user info
-└── ... # Additional resource and utility files
-assets/
-└── icons/
-└── ... # Image and audio resources
-game_history.txt # Quiz results and scores log
-credentials.txt # User login info store (if applicable)
+- Main_Menu.java — Main landing and navigation window  
+- Login.java — Authentication logic and forms  
+- Profile.java — Displays user profile, credentials & match history  
+- Quiz.java — Core quiz gameplay logic and UI  
+- Leaderboard.java — Leaderboard table and display logic  
+- Mode.java — Mode selection interface  
+- Score.java — Score display and calculation  
+- Rules.java — Quiz instructions and rules display  
+- Session.java — Tracks session state and user info  
+- assets/icons/ — Image and audio resources  
+- game_history.txt — Quiz results and scores log  
+- credentials.txt — User login info store (if applicable)
+
+---
 
 ## Instructions for Use
 
