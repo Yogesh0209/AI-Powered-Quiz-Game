@@ -40,7 +40,7 @@ This repository contains a comprehensive quiz application developed in Java usin
 - *Data Persistence:* Local File I/O
 - *Audio:* Java Sound API
 
-*Description of Main Files:*
+## *Description of Main Files:*
 
 - Main_Menu.java — Main landing and navigation window  
 - Login.java — Authentication logic and forms  
@@ -54,8 +54,6 @@ This repository contains a comprehensive quiz application developed in Java usin
 - assets/icons/ — Image and audio resources  
 - game_history.txt — Quiz results and scores log  
 - credentials.txt — User login info store (if applicable)
-
----
 
 ## Instructions for Use
 
