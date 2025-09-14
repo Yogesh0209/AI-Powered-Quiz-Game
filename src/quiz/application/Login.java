@@ -93,7 +93,7 @@ public class Login extends JFrame implements ActionListener {
             }
         });
 
-        startBackgroundMusic("C:\\Users\\Lenovo\\OneDrive\\Documents\\NetBeansProjects\\Quiz Application\\src\\icons\\quiz_bg.wav");
+        startBackgroundMusic("C:\\Users\\Lenovo\\OneDrive\\Documents\\NetBeansProjects\\Quiz Application\\src\\icons\\rules_bg.wav");
     }
 
     private void saveCredentials(String username, String password) {
