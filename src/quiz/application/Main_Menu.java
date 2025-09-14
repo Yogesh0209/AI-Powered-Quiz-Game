@@ -150,7 +150,7 @@ public class Main_Menu extends JFrame implements ActionListener {
             if (username == null) {
                 username = "";
             }
-            int timerSeconds = 0; // must reflect user’s saved preference
+            int timerSeconds = Session.getTimerSeconds();
 
             stopBackgroundMusic();
             setVisible(false);
