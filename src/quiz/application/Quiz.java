@@ -279,6 +279,10 @@ public class Quiz extends JFrame implements ActionListener {
             opt3.setVisible(true);
             opt4.setVisible(true);
             fillAnswer.setVisible(false);
+<<<<<<< HEAD
+=======
+            
+>>>>>>> b8891b0449b95094a5177dfaeafaa8bb96dbf18f
             // Re-enable all options in case they were disabled by lifeline
             opt1.setEnabled(true);
             opt2.setEnabled(true);
