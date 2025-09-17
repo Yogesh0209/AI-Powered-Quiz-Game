@@ -63,7 +63,7 @@ public class Leaderboard extends JFrame implements ActionListener {
         add(scrollPane);
 
         back = new JButton("Back");
-        back.setBounds(290, 520, 120, 35);
+        back.setBounds(310, 520, 120, 35);
         back.setBackground(new Color(95, 0, 160));
         back.setForeground(Color.WHITE);
         back.setFont(new Font("Segoe UI", Font.BOLD, 14));
