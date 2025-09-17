@@ -48,6 +48,7 @@ public class Quiz extends JFrame implements ActionListener {
 
         setBounds(50, 0, 1440, 800);
         setTitle("AI-powered Quiz Game - Quiz Page");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         getContentPane().setBackground(new Color(35, 0, 50));
         setLayout(null);
 
@@ -278,6 +279,12 @@ public class Quiz extends JFrame implements ActionListener {
             opt3.setVisible(true);
             opt4.setVisible(true);
             fillAnswer.setVisible(false);
+            // Re-enable all options in case they were disabled by lifeline
+            opt1.setEnabled(true);
+            opt2.setEnabled(true);
+            opt3.setEnabled(true);
+            opt4.setEnabled(true);
+
             opt1.setText(questions[count][1]);
             opt1.setActionCommand(questions[count][1]);
             opt2.setText(questions[count][2]);
@@ -379,17 +386,24 @@ public class Quiz extends JFrame implements ActionListener {
             }
             String correctAnswer = answers[count];
             JRadioButton[] options = {opt1, opt2, opt3, opt4};
-            JRadioButton[] wrongOptions = new JRadioButton[3];
-            int wIndex = 0;
-            for (int i = 0; i < options.length; i++) {
-                if (!options[i].getText().equals(correctAnswer)) {
-                    wrongOptions[wIndex++] = options[i];
+
+            // Gather all wrong options
+            java.util.List<JRadioButton> wrongOptions = new java.util.ArrayList<>();
+            for (JRadioButton option : options) {
+                if (!option.getText().equals(correctAnswer)) {
+                    wrongOptions.add(option);
                 }
             }
-            if (wIndex >= 2) {
-                wrongOptions[0].setEnabled(false);
-                wrongOptions[1].setEnabled(false);
+
+            // If fewer than 2 wrong options available (edge case), disable what is available
+            int toDisable = Math.min(2, wrongOptions.size());
+
+            // Randomly pick 'toDisable' wrong options to disable
+            java.util.Collections.shuffle(wrongOptions);
+            for (int i = 0; i < toDisable; i++) {
+                wrongOptions.get(i).setEnabled(false);
             }
+
             lifelineUsed = true;
             lifeline.setEnabled(false);
         } else if (ae.getSource() == submit) {
@@ -402,6 +416,7 @@ public class Quiz extends JFrame implements ActionListener {
             }
             saveUserAnswer();
             calculateScore();
+            dispose();
             setVisible(false);
             new Score(name, score, questions, useranswers, answers);
         } else if (ae.getActionCommand().equals("Back")) {

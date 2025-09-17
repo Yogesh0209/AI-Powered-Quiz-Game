@@ -11,13 +11,15 @@ import java.io.IOException;
 
 public class Login extends JFrame implements ActionListener {
 
-    JButton main_menu, back;
+    JButton main_menu, cancel;
     JTextField tfname;
     JPasswordField tfpassword;
     private Clip bgMusic;
 
     Login() {
         setTitle("AI-powered Quiz Game - Login Page");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
         getContentPane().setBackground(new Color(35, 0, 50));
         setLayout(null);
 
@@ -27,7 +29,7 @@ public class Login extends JFrame implements ActionListener {
         add(image);
 
         JLabel heading = new JLabel("Simple Minds");
-        heading.setFont(new Font("Consolas", Font.BOLD, 46));
+        heading.setFont(new Font("Consolas", Font.BOLD, 40));
         heading.setForeground(new Color(200, 160, 255));
         heading.setBounds(730, 50, 400, 60);
         add(heading);
@@ -71,14 +73,14 @@ public class Login extends JFrame implements ActionListener {
         main_menu.addActionListener(this);
         add(main_menu);
 
-        back = new JButton("Back");
-        back.setBounds(905, 360, 130, 35);
-        back.setBackground(new Color(120, 20, 180));
-        back.setForeground(Color.WHITE);
-        back.setFont(new Font("Segoe UI", Font.BOLD, 16));
-        back.setFocusPainted(false);
-        back.addActionListener(this);
-        add(back);
+        cancel = new JButton("Cancel");
+        cancel.setBounds(905, 360, 130, 35);
+        cancel.setBackground(new Color(120, 20, 180));
+        cancel.setForeground(Color.WHITE);
+        cancel.setFont(new Font("Segoe UI", Font.BOLD, 16));
+        cancel.setFocusPainted(false);
+        cancel.addActionListener(this);
+        add(cancel);
 
         getRootPane().setDefaultButton(main_menu);
 
@@ -93,7 +95,7 @@ public class Login extends JFrame implements ActionListener {
             }
         });
 
-        startBackgroundMusic("C:\\Users\\Lenovo\\OneDrive\\Documents\\NetBeansProjects\\Quiz Application\\src\\icons\\quiz_bg.wav");
+        startBackgroundMusic("C:\\Users\\Lenovo\\OneDrive\\Documents\\NetBeansProjects\\Quiz Application\\src\\icons\\rules_bg.wav");
     }
 
     private void saveCredentials(String username, String password) {
@@ -144,11 +146,13 @@ public class Login extends JFrame implements ActionListener {
             stopBackgroundMusic();
             setVisible(false);
             new Main_Menu();
-        } else if (ae.getSource() == back) {
+        } else if (ae.getSource() == cancel) {
             stopBackgroundMusic();
             setVisible(false);
-            new Main_Menu();
+            dispose();
+            new Main_Menu();  // Close login, return control to main menu or parent window
         }
+
     }
 
     public static void main(String[] args) {

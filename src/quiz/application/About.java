@@ -12,6 +12,7 @@ public class About extends JFrame implements ActionListener {
 
     About() {
         setTitle("AI-powered Quiz Game - About Us");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         getContentPane().setBackground(new Color(35, 0, 50));
         setLayout(null);
 

@@ -30,6 +30,7 @@ public class Score extends JFrame implements ActionListener {
 
         setBounds(400, 150, 750, 550);
         setTitle("AI-powered Quiz Game - Score Page");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         getContentPane().setBackground(new Color(35, 0, 50));
         setLayout(null);
 

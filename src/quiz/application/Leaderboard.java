@@ -18,14 +18,15 @@ public class Leaderboard extends JFrame implements ActionListener {
     private DefaultTableModel tableModel;
 
     public Leaderboard() {
-        setTitle("AI powered Quiz Game - Leaderboard");
+        setTitle("AI powered Quiz Game - Leaderboard Page");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         getContentPane().setBackground(new Color(35, 0, 50));
         setLayout(null);
 
         JLabel heading = new JLabel("Leaderboard - Top Scores");
         heading.setFont(new Font("Consolas", Font.BOLD, 28));
         heading.setForeground(new Color(200, 160, 255));
-        heading.setBounds(40, 30, 700, 40);
+        heading.setBounds(55, 30, 700, 40);
         add(heading);
 
         String[] colNames = { "Rank", "Username", "Highest Score" };
@@ -57,7 +58,7 @@ public class Leaderboard extends JFrame implements ActionListener {
         colModel.getColumn(2).setPreferredWidth(140);
 
         JScrollPane scrollPane = new JScrollPane(table);
-        scrollPane.setBounds(40, 100, 670, 400);
+        scrollPane.setBounds(55, 100, 670, 400);
         scrollPane.getViewport().setBackground(tableBg);
         add(scrollPane);
 

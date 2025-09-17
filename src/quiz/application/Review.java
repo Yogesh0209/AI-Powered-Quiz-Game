@@ -12,7 +12,8 @@ public class Review extends JFrame implements ActionListener {
     private Clip bgMusic; // background music
 
     public Review(String[][] questions, String[] useranswers, String[] answers) {
-        setTitle("Review Answers");
+        setTitle("AI-powered Quiz Game - Review Answers");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         getContentPane().setBackground(new Color(35, 0, 50));
         setLayout(new BorderLayout());
 

@@ -8,26 +8,28 @@ import javax.sound.sampled.*;
 
 public class Mode extends JFrame implements ActionListener {
 
-    JButton freeRoam, challenger, rapidFire, back;
+    JButton casual, challenger, rapidFire, back;
     private Clip bgMusic;
 
     Mode() {
         setTitle("AI-powered Quiz Game - Select Mode");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
         getContentPane().setBackground(new Color(35, 0, 50));
         setLayout(null);
 
         JLabel heading = new JLabel("Select Quiz Mode");
         heading.setFont(new Font("Consolas", Font.BOLD, 32));
         heading.setForeground(new Color(200, 160, 255));
-        heading.setBounds(300, 40, 400, 50);
+        heading.setBounds(310, 40, 400, 50);
         add(heading);
 
-        // FreeRoam button
-        freeRoam = new JButton("<html><center>1. FreeRoam<br><small>No timer, take your time to answer</small></center></html>");
-        freeRoam.setBounds(250, 130, 400, 80);
-        styleButton(freeRoam);
-        freeRoam.addActionListener(this);
-        add(freeRoam);
+        // Casual button
+        casual = new JButton("<html><center>1. Casual<br><small>No timer, take your time to answer</small></center></html>");
+        casual.setBounds(250, 130, 400, 80);
+        styleButton(casual);
+        casual.addActionListener(this);
+        add(casual);
 
         // Challenger button
         challenger = new JButton("<html><center>2. Challenger<br><small>8 minutes total to answer all questions</small></center></html>");
@@ -37,7 +39,7 @@ public class Mode extends JFrame implements ActionListener {
         add(challenger);
 
         // Rapid Fire button
-        rapidFire = new JButton("<html><center>3. Rapid Fire<br><small>15 seconds total to answer all questions</small></center></html>");
+        rapidFire = new JButton("<html><center>3. Rapid Fire<br><small>15 seconds given per question</small></center></html>");
         rapidFire.setBounds(250, 330, 400, 80);
         styleButton(rapidFire);
         rapidFire.addActionListener(this);
@@ -104,8 +106,8 @@ public class Mode extends JFrame implements ActionListener {
         }
 
         // Detect mode selected and save preference
-        if (ae.getSource() == freeRoam) {
-            Session.setMode("FreeRoam", 0);
+        if (ae.getSource() == casual) {
+            Session.setMode("Casual", 0);
         } else if (ae.getSource() == challenger) {
             Session.setMode("Challenger", 8 * 60);
         } else if (ae.getSource() == rapidFire) {
@@ -116,8 +118,6 @@ public class Mode extends JFrame implements ActionListener {
         }
 
         stopBackgroundMusic();
-
-        // After selecting mode, go back to Main Menu, do NOT start quiz here
         setVisible(false);
         new Main_Menu(); // return to main menu after mode selection
         }

@@ -15,6 +15,7 @@ public class Rules extends JFrame implements ActionListener {
     Rules() {
         
         setTitle("AI-powered Quiz Game - Rules Page");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         getContentPane().setBackground(new Color(35, 0, 50));
         setLayout(null);
 
