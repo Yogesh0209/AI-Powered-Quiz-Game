@@ -90,6 +90,7 @@ public class Profile extends JFrame {
         btnBack.setFont(new Font("Segoe UI", Font.BOLD, 16));
         btnBack.setFocusPainted(false);
         btnBack.addActionListener(e -> {
+            stopBackgroundMusic();
             setVisible(false);
             new Main_Menu();
         });
